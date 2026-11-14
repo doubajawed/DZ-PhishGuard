@@ -1,0 +1,99 @@
+{
+  "dataset_rows": 136,
+  "train_rows": 100,
+  "test_rows": 36,
+  "train_groups": 25,
+  "test_groups": 9,
+  "source_counts": {
+    "synthetic_algerian": 136
+  },
+  "label_counts": {
+    "legitimate": 64,
+    "scam": 72
+  },
+  "test_label_counts": {
+    "legitimate": 16,
+    "scam": 20
+  },
+  "baseline": {
+    "name": "majority-class baseline",
+    "predicted_class": "scam",
+    "accuracy": 0.5555555555555556,
+    "precision_scam": 0.5555555555555556,
+    "recall_scam": 1.0,
+    "f1_scam": 0.7142857142857143
+  },
+  "model": {
+    "name": "word + character TF-IDF with Logistic Regression",
+    "accuracy": 0.8333333333333334,
+    "precision_scam": 0.8888888888888888,
+    "recall_scam": 0.8,
+    "f1_scam": 0.8421052631578947,
+    "average_precision": 0.9025893473011188
+  },
+  "confusion_matrix_labels": [
+    "legitimate",
+    "scam"
+  ],
+  "confusion_matrix": [
+    [
+      14,
+      2
+    ],
+    [
+      4,
+      16
+    ]
+  ],
+  "evaluation_note": "One fold of StratifiedGroupKFold. Synthetic messages were drafted with AI assistance; this is a prototype benchmark, not a real-world field trial.",
+  "misclassified_examples": [
+    {
+      "text": "We blocked a transfer. Reply with your one-time passcode to cancel it and secure your account.",
+      "true_label": "scam",
+      "predicted_label": "legitimate",
+      "model_score_scam": 0.4438,
+      "source": "synthetic_algerian",
+      "language": "en"
+    },
+    {
+      "text": "Your wallet is compromised. Install this remote support app and share the access code with our agent.",
+      "true_label": "scam",
+      "predicted_label": "legitimate",
+      "model_score_scam": 0.4388,
+      "source": "synthetic_algerian",
+      "language": "en"
+    },
+    {
+      "text": "Final warning: click the link and enter your banking password now or lose access permanently.",
+      "true_label": "scam",
+      "predicted_label": "legitimate",
+      "model_score_scam": 0.4945,
+      "source": "synthetic_algerian",
+      "language": "en"
+    },
+    {
+      "text": "باش نرجعولك حسابك المخترق، ثبت التطبيق وافتح مشاركة الشاشة وأعطينا رمز الدخول.",
+      "true_label": "scam",
+      "predicted_label": "legitimate",
+      "model_score_scam": 0.4392,
+      "source": "synthetic_algerian",
+      "language": "ar-dz"
+    },
+    {
+      "text": "خدمة الزبائن متاحة من الأحد إلى الخميس عبر الرقم المطبوع خلف البطاقة.",
+      "true_label": "legitimate",
+      "predicted_label": "scam",
+      "model_score_scam": 0.6434,
+      "source": "synthetic_algerian",
+      "language": "ar-dz"
+    },
+    {
+      "text": "لا ترسل كلمة المرور أو رمز OTP لأي شخص حتى لو قال إنه من البنك.",
+      "true_label": "legitimate",
+      "predicted_label": "scam",
+      "model_score_scam": 0.5996,
+      "source": "synthetic_algerian",
+      "language": "ar-dz"
+    }
+  ]
+}
